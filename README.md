@@ -1,0 +1,2 @@
+# cry-blog
+Blog posts about the Cloud Resume Challenge
