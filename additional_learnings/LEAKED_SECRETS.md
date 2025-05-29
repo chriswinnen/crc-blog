@@ -3,7 +3,7 @@
 
 
 Unintentionally **leaking secrets** in git repositories or any version control for that matter, is one of the most prevelant root causes for initial access of threat actors. 
-According to [GitGuardian](https://www.gitguardian.com/)'s State of Secret Sprawls 2025 report [^1] almost **24 million secrets** were detected in public GitHub commits in 2024!
+According to [GitGuardian](https://www.gitguardian.com/)'s State of Secret Sprawls 2025 report[^1] almost **24 million secrets** were detected in public GitHub commits in 2024!
 
 Examples of _secrets_ are:
 - AWS Access Keys,
@@ -36,4 +36,4 @@ A "good" secret detection tool should offer the following capablities:
 I've been using GitGuardian in both work-related as well as my own projects
 
 
-[^1] [The State of Secrets Sprawl 2025](https://www.gitguardian.com/state-of-secrets-sprawl-report-2025)
+[^1]: [The State of Secrets Sprawl 2025](https://www.gitguardian.com/state-of-secrets-sprawl-report-2025)
