@@ -67,10 +67,6 @@ You may be tempted to simply "_overwrite_" a leaked secret by commiting and push
 Once you've revoked your secret, it cannot be used anymore. Nonetheless, exposing secrets in your version control looks unprofessional and might raise concerns (even when they are expired). That's why you should consider **rewriting your git history**.
 
 
-> [!CAUTION]
-> Rewriting Git history is a powerful operation that fundamentally alters the project's commit log, leading to **disrupted workflows for collaborators who will need to re-clone or force update their repositories, and potential data loss if not executed carefully.** It can also complicate auditing and make it harder to trace the true lineage of changes, as commit hashes will change.
-
-
 I recently ~~wanted~~ had to rewrite my git history because I had hardcoded (_bad..._) and pushed (_worse..._) the `api_token` of my CloudFlare terraform provider configuration in my `providers.tf`.
 
 I used `git-filter-repo`[^5] for that purpose. Here are the steps I took to replace `api_token = "abcd-1234-efgh-56789"` with `api_token = "REMOVED_FROM_GIT_HISTORY"` in all commits of the `providers.tf` file in the entire git history. 
@@ -127,10 +123,10 @@ git remote add origin https://<URL_TO_YOUR_REMOTE_GIT>
 ```
 
 ### Step 6: Force Push the rewritten history
-This is the most critical step and requires overwriting the remote history.
-
 > [!CAUTION]
-> **This is a destructive operation on the remote repository's history. Inform any collaborators before performing this step, as they will need to re-clone or perform complex Git operations on their end.**
+> Rewriting Git history is a powerful operation that fundamentally alters the project's commit log, leading to **disrupted workflows for collaborators who will need to re-clone or force update their repositories, and potential data loss if not executed carefully.** Inform any collaborators before performing this step, as they will need to re-clone or perform complex Git operations on their end. It can also complicate auditing and make it harder to trace the true lineage of changes, as commit hashes will change.
+
+This is the most critical step and requires overwriting the remote history.
 
 ```bash
 git push --force-with-lease --set-upstream origin main
