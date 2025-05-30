@@ -2,7 +2,7 @@
 ![Hagrid regretting that he spilled the secrets](img/hagrid-harry-potter.png.gif "Don't worry Hagrid, it happens to the best of us...")
 
 
-Unintentional **secrets leaks** in git repositories or any version control for that matter, is one of the most prevalent root causes for initial access of threat actors. 
+Unintentional **secrets leaks** in git repositories or any version control for that matter, are one of the most prevalent root causes for initial access of threat actors. 
 According to the [GitGuardian](https://www.gitguardian.com/)'s State of Secret Sprawls 2025 report[^1], GitGuardian detected almost **24 million secrets** in public GitHub commits in 2024!
 [^1]: [The State of Secrets Sprawl 2025](https://www.gitguardian.com/state-of-secrets-sprawl-report-2025)
 
@@ -31,7 +31,7 @@ There is an abundance of commercial and free secret detection tools out there. O
 - [Arnica](https://www.arnica.io/use-cases/hard-code-secrets)
 
 A "good" secret detection tool should offer the following capabilities:
-- **Extensive Secret Type Coverage**. You don't want to have to write your own RegEx to detect secrets in your code.
+- **Extensive Secret Type Coverage**. Look for tools that spare you the effort of writing custom RegEx for secret detection.
 - **Alerting workflow**. When your tool does detect a leaked secret you want to be notified immediately via your preferred communication method. Think e-mail, Slack messages, JIRA tickets, etc.
 - **Integration and Workflow Compatibility**. It should integrate seamlessly into your Version Control Systems (VCS), CI/CD pipelines, and IDE. Wouldn't it be nice if your tool could scan for secrets before you `git push` or even `git commit`? Check out the [pre-commit](https://pre-commit.com) framework.
 - **Whitelisting and approval**. Sometimes you may want to intentionally allow secrets to be made public. Your tool should be able to handle such edge-cases to allow and/or ignore a secret occurrence.
@@ -158,7 +158,7 @@ curl "https://api.cloudflare.com/client/v4/accounts/<MY_ACCOUNT_ID>/tokens/verif
      -H "Authorization: Bearer abcd-1234-efgh-56789"
 ```
 
-The response I got validated, the API Token is no longer working:
+The response I got validated that the API Token is no longer working:
 ```json
 {
   "success": false,
@@ -338,13 +338,13 @@ Let's examine this in more detail:
 
 ### Setting up the Visual Studio Code integration
 GitGuardian also offers an integration for Visual Studio Code (VSC)[^9].
-[^9]: You can install it from the [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=gitguardian-secret-security.gitguardian&utm_campaign=102&utm_content=4669&utm_medium=cio&utm_source=email)
+[^9]: You can install it from the [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=gitguardian-secret-security.gitguardian)
 
 Once you've installed the VSC integration, GitGuardian will highlight it in your editor:
 
 ![Example of a highlighted secret that was detected](img/incident_highlighted_dark.png "GitGuardian will highlight all the secrets it finds in your code.")
 
-# The easiest method of learning wisdom
+## The easiest method of learning wisdom
 My recent experience was a bitter lesson, but one that ultimately strengthened my security posture and reinforced the importance of proactive defense. 
 
 You don't have to learn this wisdom the "bitter" way yourself. You can use Confucius's easiest method of learning wisdom (_"imitation"_) by taking action today:
